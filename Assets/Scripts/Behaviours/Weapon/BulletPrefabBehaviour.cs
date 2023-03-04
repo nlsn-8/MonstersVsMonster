@@ -17,12 +17,22 @@ namespace Demo.Behaviours.Weapon
                 _playerSpeed = value;
             }
         }
+
         private float _bulletSpeed = 50f;
         public float BulletSpeed // Powerup can change this value
         {
             set
             {
                 _bulletSpeed = value;
+            }
+        }
+
+        private int _bulletDamage = 100;
+        public int BulletDamage // Powerup can change this value
+        {
+            set
+            {
+                _bulletDamage = value;
             }
         }
 
@@ -45,7 +55,7 @@ namespace Demo.Behaviours.Weapon
             _damageable = other.GetComponent<IDamageable>();
             if(_damageable != null)
             {
-                _damageable.Damage();
+                _damageable.Damage(_bulletDamage);
                 DestroyGO(0f);
             }
         }

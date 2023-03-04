@@ -6,8 +6,8 @@ namespace Demo.Behaviours
 {
     public interface IDamageable
     {
-        int Health {get;set;}
-        int Resistance {get;set;}
-        void Damage();
+        float Health {get;set;}
+        float Resistance {get;set;}
+        void Damage(int integer);
     }
 }

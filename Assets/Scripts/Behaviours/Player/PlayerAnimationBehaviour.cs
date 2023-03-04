@@ -8,9 +8,9 @@ namespace Demo.Behaviours.Player
     {
 
         //TODO:
-        //fix firepoint location when ducking
         //shoot when ducking animation has finished
         //shoot faster when ducking
+        // play reverse animation when hiding gun
         //If standing and shoot, play complete animation
         //back to unarmed idle after 5f (optional)
 
