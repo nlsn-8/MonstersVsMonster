@@ -5053,6 +5053,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerAnimator: {fileID: 5397918330832159215}
   PlayerSprite: {fileID: 5397918330832159214}
+  PlayerWeapon: {fileID: 5397918330975762336}
 --- !u!212 &5397918330832159214
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5279,6 +5280,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 4afea5c5-d545-4f78-a0c5-9a34cbe135c8
     m_ActionName: Player/Duck[/Keyboard/s,/Keyboard/downArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5397918330975762333}
+        m_TargetAssemblyTypeName: Demo.Behaviours.Player.PlayerController, Player
+        m_MethodName: OnHideWeapon
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 3bce2e9e-46f3-4841-8698-0fd2bb1b5b1d
+    m_ActionName: Player/HideWeapon[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -5338,6 +5355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerMovement: {fileID: 5397918330975762332}
   PlayerAnimation: {fileID: 5397918330832159212}
+  PlayerWeapon: {fileID: 5397918330975762336}
 --- !u!1 &5397918330975762334
 GameObject:
   m_ObjectHideFlags: 0
@@ -5352,6 +5370,7 @@ GameObject:
   - component: {fileID: 5397918330975762322}
   - component: {fileID: 5397918330975762333}
   - component: {fileID: 5397918330975762332}
+  - component: {fileID: 5397918330975762336}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -5375,6 +5394,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5397918330975762336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5397918330975762334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77d3c733c53cc4f4c812e1848ba5a818, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FirePoint: {fileID: 5397918331218619034}
+  BulletPrefab: {fileID: 8729582439720729864, guid: fe17d123169547946a168d0c642b478d, type: 3}
+  AnimationEnded: 0
 --- !u!1 &5397918331218619013
 GameObject:
   m_ObjectHideFlags: 0

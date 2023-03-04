@@ -6,18 +6,28 @@ namespace Demo.Behaviours.Player
 {
     public class PlayerAnimationBehaviour : MonoBehaviour
     {
+
+        //TODO:
+        //fix firepoint location when ducking
+        //shoot when ducking animation has finished
+        //shoot faster when ducking
+        //If standing and shoot, play complete animation
+        //back to unarmed idle after 5f (optional)
+
         public Animator PlayerAnimator;
         public SpriteRenderer PlayerSprite;
+        public PlayerWeaponBehaviour PlayerWeapon;
 
         private Vector2 _playerMovement;
         private int _playerHorizontalID;
         private int _playerShootID;
-        private int _playerStandID;
         private int _playerDuckID;
         private int _playerHurtID;
         private int _playerJumpID;
         private bool _flipSprite;
         private bool _isDucking = false;
+        private bool _isShooting = false;
+        public bool IsGrounded;
 
         private float _currentTime;
         private int _timeToAction = 5;
@@ -27,7 +37,6 @@ namespace Demo.Behaviours.Player
         {
             _playerHorizontalID = Animator.StringToHash("Horizontal");
             _playerShootID = Animator.StringToHash("Shoot");
-            _playerStandID = Animator.StringToHash("Stand");
             _playerDuckID = Animator.StringToHash("Duck");
             _playerHurtID = Animator.StringToHash("Hurt");
             _playerJumpID = Animator.StringToHash("Jump");
@@ -37,6 +46,12 @@ namespace Demo.Behaviours.Player
         private void Update()
         {
             UpdateMovementAnimation(_playerMovement.x);
+            
+            // _currentTime += Time.deltaTime;
+            // if(_currentTime >= _timeToAction)
+            // {
+            //     PlayStandAnimation();
+            // }
         }
 
         public void UpdateMovementValue(Vector2 movementVector)
@@ -53,7 +68,11 @@ namespace Demo.Behaviours.Player
 
         public void PlayJumpAnimation()
         {
-            PlayerAnimator.SetBool(_playerJumpID, true);
+            if(IsGrounded) PlayerAnimator.SetBool(_playerJumpID, IsGrounded);
+        }
+        public void StopJumpAnimation()
+        {
+            PlayerAnimator.SetBool(_playerJumpID, false);
         }
 
         public void PlayDuckAnimation()
@@ -64,24 +83,36 @@ namespace Demo.Behaviours.Player
 
         public void PlayStandAnimation()
         {
-            PlayerAnimator.SetBool(_playerJumpID, false);
             PlayerAnimator.SetBool(_playerDuckID, false);
-            PlayerAnimator.SetTrigger(_playerStandID);
             _isDucking = false;
         }
 
-        public void PlayShootAnimation()
+        public void PlayShootAnimation(bool weaponState)
         {
-            if(Mathf.Approximately(_playerMovement.sqrMagnitude, 0))
-            {
-                PlayerAnimator.SetTrigger(_playerShootID);
-                if(!_isDucking) ResetTime();
-            }
+            PlayerAnimator.SetBool(_playerShootID, weaponState);
+            if(!_isDucking) ResetTime();
+        }
+
+        public void UpdateWeaponState(bool weaponState)
+        {
+            _isShooting = weaponState;
+            PlayerAnimator.SetBool(_playerShootID,_isShooting);
         }
 
         private void ResetTime()
         {
             _currentTime = 0f;
+        }
+        
+        // Invoked from shoot_animation Animation Event
+        private void PlayerWeaponAnimationEnded()
+        {
+            PlayerWeapon.AnimationEnded = true;
+        }
+        // Invoked from shoot_animation Animation Event
+        private void PlayerWeaponAnimationStarted()
+        {
+            PlayerWeapon.AnimationEnded = false;
         }
 
         private void FlipSprite(float value)

@@ -15,7 +15,9 @@ namespace Demo.Behaviours.Player
     {
         public PlayerMovementBehaviour PlayerMovement;
         public PlayerAnimationBehaviour PlayerAnimation;
+        public PlayerWeaponBehaviour PlayerWeapon;
         private Vector2 _movement;
+        private bool _activateWeapon;
 
         public void OnMove(InputAction.CallbackContext context)
         {
@@ -24,7 +26,7 @@ namespace Demo.Behaviours.Player
 
         public void OnJump(InputAction.CallbackContext context)
         {
-            if(context.started)
+            if(context.started || context.performed)
             {
                 PlayerMovement.Jump();
                 PlayerAnimation.PlayJumpAnimation();
@@ -33,9 +35,24 @@ namespace Demo.Behaviours.Player
 
         public void OnShoot(InputAction.CallbackContext context)
         {
-            if(context.performed)
+            if(context.started || context.performed)
             {
-                PlayerAnimation.PlayShootAnimation();
+                _activateWeapon = true;
+                PlayerAnimation.PlayShootAnimation(_activateWeapon);
+                PlayerWeapon.Shoot();
+            }
+            else if(context.canceled)
+            {
+                PlayerWeapon.CannotShoot();
+            }
+        }
+
+        public void OnHideWeapon(InputAction.CallbackContext context)
+        {
+            if(context.started)
+            {
+                _activateWeapon = false;
+                PlayerAnimation.UpdateWeaponState(_activateWeapon);
             }
         }
 
@@ -43,11 +60,8 @@ namespace Demo.Behaviours.Player
         {
             if(context.started || context.performed)
             {
-                if(Mathf.Approximately(_movement.sqrMagnitude, 0))
-                {
-                    PlayerMovement.Duck();
-                    PlayerAnimation.PlayDuckAnimation();
-                }
+                PlayerMovement.Duck();
+                PlayerAnimation.PlayDuckAnimation();
             }
             else if(context.canceled)
             {
@@ -75,7 +89,22 @@ namespace Demo.Behaviours.Player
         {
             if(other.gameObject.CompareTag("Ground"))
             {
-                PlayerAnimation.PlayStandAnimation();
+                PlayerAnimation.IsGrounded = true;
+                PlayerAnimation.StopJumpAnimation();
+            }
+        }
+        private void OnCollisionStay2D(Collision2D other)
+        {
+            if(other.gameObject.CompareTag("Ground"))
+            {
+                PlayerAnimation.IsGrounded = true;
+            }
+        }
+        private void OnCollisionExit2D(Collision2D other)
+        {
+            if(other.gameObject.CompareTag("Ground"))
+            {
+                PlayerAnimation.IsGrounded = false;
             }
         }
     }

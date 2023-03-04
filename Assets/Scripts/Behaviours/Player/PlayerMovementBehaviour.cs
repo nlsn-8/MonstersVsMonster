@@ -40,7 +40,7 @@ namespace Demo.Behaviours.Player
 
         public void Duck()
         {
-            PlayerRigidbody.constraints = RigidbodyConstraints2D.FreezePositionX; 
+            PlayerRigidbody.constraints = RigidbodyConstraints2D.FreezeAll; 
         }
         public void Stand()
         {
