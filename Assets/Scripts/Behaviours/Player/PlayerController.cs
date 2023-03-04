@@ -58,6 +58,8 @@ namespace Demo.Behaviours.Player
 
         public void OnDuck(InputAction.CallbackContext context)
         {
+            if(!PlayerMovement.IsGrounded)
+                return;
             if(context.started || context.performed)
             {
                 PlayerMovement.Duck();

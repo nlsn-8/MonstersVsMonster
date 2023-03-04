@@ -10,6 +10,14 @@ namespace Demo.Behaviours.Player
         public BoxCollider2D PlayerBoxCollider;
         public CircleCollider2D PlayerCircleCollider;
 
+        private bool _isGrounded;
+        public bool IsGrounded
+        {
+            get
+            {
+                return _isGrounded;
+            }
+        }
         private Vector2 _playerMovement;
         private Vector2 _playerRigidbodyMovement;
         public Vector2 PlayerMovementVector
@@ -26,6 +34,7 @@ namespace Demo.Behaviours.Player
         private void FixedUpdate()
         {
             Move();
+            _isGrounded = GroundChecker();
         }
 
         public void UpdateMovementValue(Vector2 move)
@@ -51,9 +60,21 @@ namespace Demo.Behaviours.Player
             PlayerBoxCollider.enabled = true;
         }
 
-        public void Jump()
+        private bool GroundChecker()
         {
             if(PlayerCircleCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public void Jump()
+        {
+            if(_isGrounded)
             {
                 PlayerRigidbody.velocity = new Vector2(PlayerRigidbody.velocity.x, _playerJumpForce);
             }
