@@ -7,7 +7,8 @@ namespace Demo.Behaviours.Player
     public class PlayerMovementBehaviour : MonoBehaviour
     {
         public Rigidbody2D PlayerRigidbody;
-        public BoxCollider2D PlayerCollider;
+        public BoxCollider2D PlayerBoxCollider;
+        public CircleCollider2D PlayerCircleCollider;
 
         private Vector2 _playerMovement;
         private Vector2 _playerRigidbodyMovement;
@@ -40,17 +41,19 @@ namespace Demo.Behaviours.Player
 
         public void Duck()
         {
-            PlayerRigidbody.constraints = RigidbodyConstraints2D.FreezeAll; 
+            PlayerRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
+            PlayerBoxCollider.enabled = false;
         }
         public void Stand()
         {
             PlayerRigidbody.constraints = RigidbodyConstraints2D.None; 
             PlayerRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation; 
+            PlayerBoxCollider.enabled = true;
         }
 
         public void Jump()
         {
-            if(PlayerCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
+            if(PlayerCircleCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
             {
                 PlayerRigidbody.velocity = new Vector2(PlayerRigidbody.velocity.x, _playerJumpForce);
             }
