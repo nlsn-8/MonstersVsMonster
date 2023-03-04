@@ -8,13 +8,16 @@ namespace Demo.Behaviours.Enemy
 {
     public class EnemyBehaviour : MonoBehaviour, IDamageable
     {
+        private IDamageable _damageable;
         public float Health{get;set;}
         public float Resistance{get;set;}
+        private int _strength;
         
         private void Start()
         {
             Health = 100;
             Resistance = 0.8f;
+            _strength = 20;
         }
 
         public void Damage(int damage)
@@ -29,11 +32,25 @@ namespace Demo.Behaviours.Enemy
             // play damage animation
         }
 
-        public void Die()
+        private void Die()
         {
             Destroy(this.gameObject);
             // play death animation
         }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            _damageable = other.GetComponent<IDamageable>();
+            if(_damageable != null)
+            {
+                // Enemy makes damage to the other damageable
+                _damageable.Damage(_strength);
+                // Enemy takes damage if it collides with a damageable obj
+                // Damage(_strength);
+            }
+        }
+
+
 
     }
 }

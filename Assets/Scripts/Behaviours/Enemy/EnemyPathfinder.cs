@@ -9,7 +9,8 @@ namespace Demo.Behaviours.Enemy
     [RequireComponent(typeof(Rigidbody2D))]
     public class EnemyPathfinder : MonoBehaviour
     {
-        public Transform PlayerTarget;
+        private GameObject _playerObject;
+        private Transform _playerTarget;
         public Rigidbody2D EnemyRigidbody;
         public Seeker EnemySeeker;
 
@@ -26,6 +27,9 @@ namespace Demo.Behaviours.Enemy
         // Start is called before the first frame update
         void Start()
         {
+            _playerObject = GameObject.Find("Player");
+            _playerTarget = _playerObject.GetComponent<Transform>();
+
             // method's name, amount of time to wait until the callback method, repeat rate
             InvokeRepeating("UpdatePath", 0f, .5f);
         }
@@ -36,7 +40,7 @@ namespace Demo.Behaviours.Enemy
             if(EnemySeeker.IsDone())
             {
                 // makes path and after calculating the path OnPathComplete gets called
-                EnemySeeker.StartPath(EnemyRigidbody.position, PlayerTarget.position, OnPathComplete);
+                EnemySeeker.StartPath(EnemyRigidbody.position, _playerTarget.position, OnPathComplete);
             }
         }
 
