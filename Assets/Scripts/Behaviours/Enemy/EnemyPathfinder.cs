@@ -20,6 +20,8 @@ namespace Demo.Behaviours.Enemy
         private int _currentWaypoint = 0;
         private bool _reachedEndOfPath = false;
         private float _speed = 200f;
+        private Vector2 _force;
+        private bool _flipTransform;
 
         // Start is called before the first frame update
         void Start()
@@ -49,6 +51,12 @@ namespace Demo.Behaviours.Enemy
 
         void FixedUpdate()
         {
+            MoveEnemyThroughPath();
+            FlipEnemyTransform();
+        }
+
+        private void MoveEnemyThroughPath()
+        {
             if(_path == null)
             {
                 return;
@@ -69,10 +77,10 @@ namespace Demo.Behaviours.Enemy
             // direction = position of the next waypoint's path minus our position. 
             // Is normalized to get only the direction
             Vector2 direction = ((Vector2)_path.vectorPath[_currentWaypoint] - EnemyRigidbody.position).normalized;
-            Vector2 force = direction * _speed * Time.fixedDeltaTime;
+            _force = direction * _speed * Time.fixedDeltaTime;
 
             // add force to enemy, set linear drag to stop the enemy moving further in the rb's inspector
-            EnemyRigidbody.AddForce(force);
+            EnemyRigidbody.AddForce(_force);
 
             // get the distance to the next waypoint
             float distance = Vector2.Distance(EnemyRigidbody.position, _path.vectorPath[_currentWaypoint]);
@@ -80,7 +88,22 @@ namespace Demo.Behaviours.Enemy
             {
                 _currentWaypoint ++;
             }
-        
+        }
+
+        private void FlipEnemyTransform()
+        {
+            // using force, the enemy turns to the direction it wants to go
+            // using rb.velocity.x just turns the enemy to the direction it goes
+            if(_force.x < 0 && _flipTransform)
+            {
+                _flipTransform = !_flipTransform;
+                transform.Rotate(0,180,0);
+            }
+            else if(_force.x > 0 && !_flipTransform)
+            {
+                _flipTransform = !_flipTransform;
+                transform.Rotate(0,180,0);
+            }
         }
     }
 }
