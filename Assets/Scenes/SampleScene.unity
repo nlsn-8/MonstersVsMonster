@@ -357,6 +357,123 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &598079027
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 598079028}
+  - component: {fileID: 598079029}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &598079028
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598079027}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1992441550}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &598079029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598079027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aee086eaf5ed1ea45b160c2a6eb33641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sounds:
+  - name: None
+    source: {fileID: 0}
+    clip: {fileID: 0}
+    volume: 0.6
+    pitch: 0
+    isLoop: 1
+    playOnAwake: 0
+    hasCooldown: 0
+  - name: Music
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: e0b53e44b5908484bb1b360cdc02afd7, type: 3}
+    volume: 0.6
+    pitch: 1
+    isLoop: 1
+    playOnAwake: 1
+    hasCooldown: 0
+  - name: Shoot
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: 2402de32a8563c041911e2d8eb3468e8, type: 3}
+    volume: 0.5
+    pitch: 1
+    isLoop: 0
+    playOnAwake: 0
+    hasCooldown: 0
+  - name: Jump
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: 4e349dc959014a845b9aa317d1c2b7f0, type: 3}
+    volume: 0.5
+    pitch: 1
+    isLoop: 0
+    playOnAwake: 0
+    hasCooldown: 0
+  - name: Land
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: 04bdf53ba9e87b84d9da74f8ac007e0c, type: 3}
+    volume: 0.5
+    pitch: 1
+    isLoop: 0
+    playOnAwake: 0
+    hasCooldown: 0
+  - name: Hit
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: 082a0d5b8ea520d4ebff92ffcbf863be, type: 3}
+    volume: 1
+    pitch: 1
+    isLoop: 0
+    playOnAwake: 0
+    hasCooldown: 0
+  - name: EnemyDeath
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: 435152862e9a0fc4ab50c0ae38075a49, type: 3}
+    volume: 0.5
+    pitch: 1
+    isLoop: 0
+    playOnAwake: 0
+    hasCooldown: 0
+  - name: Walk
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: 6d25ea2828b710243a58e619d3964961, type: 3}
+    volume: 0.5
+    pitch: 1
+    isLoop: 0
+    playOnAwake: 0
+    hasCooldown: 1
+  - name: Monster
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: dd0fe16c7a150b24fbee0ea45a54cff9, type: 3}
+    volume: 0.5
+    pitch: 1
+    isLoop: 0
+    playOnAwake: 0
+    hasCooldown: 1
 --- !u!1 &720079198
 GameObject:
   m_ObjectHideFlags: 0
@@ -4511,6 +4628,38 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1992441549
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1992441550}
+  m_Layer: 0
+  m_Name: Managers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1992441550
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992441549}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 598079028}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2022840032
 GameObject:
   m_ObjectHideFlags: 0

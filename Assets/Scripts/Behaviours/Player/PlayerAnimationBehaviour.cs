@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using Demo.Managers;
+
 namespace Demo.Behaviours.Player
 {
     public class PlayerAnimationBehaviour : MonoBehaviour
@@ -64,15 +66,21 @@ namespace Demo.Behaviours.Player
         {
             float absolute = Mathf.Abs(movementBlendValue);
             PlayerAnimator.SetFloat(_playerHorizontalID, absolute);
+            // if(absolute > 0) SoundManager.Instance.Play("Walk");
         }
 
         public void PlayJumpAnimation()
         {
-            if(IsGrounded) PlayerAnimator.SetBool(_playerJumpID, IsGrounded);
+            if(IsGrounded)
+            {
+                PlayerAnimator.SetBool(_playerJumpID, IsGrounded);
+                SoundManager.Instance.Play("Jump");
+            }
         }
         public void StopJumpAnimation()
         {
             PlayerAnimator.SetBool(_playerJumpID, false);
+            SoundManager.Instance.Play("Land");
         }
 
         public void PlayDuckAnimation()

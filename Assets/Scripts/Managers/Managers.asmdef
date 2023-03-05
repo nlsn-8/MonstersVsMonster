@@ -1,11 +1,7 @@
 {
-    "name": "Enemy",
-    "rootNamespace": "Demo.Behaviours.Enemy",
-    "references": [
-        "GUID:a940e91d3688c924eb96fe7ad06da0db",
-        "GUID:efa45043feb7e4147a305b73b5cea642",
-        "GUID:28e86f7bad350c6439bb87106f044b4b"
-    ],
+    "name": "Managers",
+    "rootNamespace": "Demo.Managers",
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

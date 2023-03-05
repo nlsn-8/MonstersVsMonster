@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using Demo.Behaviours.Weapon;
+using Demo.Managers;
 
 namespace Demo.Behaviours.Player
 {
@@ -23,6 +24,7 @@ namespace Demo.Behaviours.Player
             {
                 _nextFire = Time.time + _fireRate;
                 Instantiate(BulletPrefab, FirePoint.position, FirePoint.rotation);
+                SoundManager.Instance.Play("Shoot");
             }
         }
         public void UpdateMovementValue(Vector2 playerMovement)
