@@ -8,6 +8,7 @@ namespace Demo.Behaviours.Enemy
 {
     public class EnemyBehaviour : MonoBehaviour, IDamageable
     {
+        public GameObject EnemyDeathAnimation;
         private IDamageable _damageable;
         public float Health{get;set;}
         public float Resistance{get;set;}
@@ -34,8 +35,9 @@ namespace Demo.Behaviours.Enemy
 
         private void Die()
         {
-            Destroy(this.gameObject);
             // play death animation
+            Instantiate(EnemyDeathAnimation, transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
         }
 
         private void OnTriggerEnter2D(Collider2D other)

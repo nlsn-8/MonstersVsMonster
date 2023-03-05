@@ -8,6 +8,7 @@ namespace Demo.Behaviours.Weapon
 {
     public class BulletPrefabBehaviour : MonoBehaviour
     {
+        public GameObject HitAnimation;
         private IDamageable _damageable;
         private static float _playerSpeed;
         public static float PlayerBulletSpeed // player movement can change this value
@@ -55,6 +56,7 @@ namespace Demo.Behaviours.Weapon
             _damageable = other.GetComponent<IDamageable>();
             if(_damageable != null)
             {
+                Instantiate(HitAnimation, transform.position, Quaternion.identity);
                 _damageable.Damage(_bulletDamage);
                 DestroyGO(0f);
             }

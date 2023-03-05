@@ -5130,10 +5130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4457211670270554629, guid: ec22f1a6bdf99fc439b316fc65b197b3, type: 3}
-      propertyPath: PlayerTarget
-      value: 
-      objectReference: {fileID: 5397918330975762335}
     - target: {fileID: 4457211670270554630, guid: ec22f1a6bdf99fc439b316fc65b197b3, type: 3}
       propertyPath: m_Name
       value: Enemy_flyeye

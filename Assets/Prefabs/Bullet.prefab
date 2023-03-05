@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e98a5c94639ce4b41a2f11a0c3c38973, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HitAnimation: {fileID: 190813694810001094, guid: 8be80c7f2f9716e45998811c377519c2, type: 3}
   BulletRigidbody: {fileID: 8729582440573797490}
 --- !u!50 &8729582440573797490
 Rigidbody2D:
