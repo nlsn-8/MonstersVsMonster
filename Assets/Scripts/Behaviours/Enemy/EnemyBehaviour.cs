@@ -79,6 +79,7 @@ namespace Demo.Behaviours.Enemy
 
         private void OnTriggerEnter2D(Collider2D other)
         {
+            if(other.CompareTag("Enemy")) return;
             _damageable = other.GetComponent<IDamageable>();
             if(_damageable != null)
             {

@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 5115335411344488148}
   m_Layer: 0
   m_Name: Enemy_bat
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -203,7 +203,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d40ae0ba67538940bcadb231c690348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerTarget: {fileID: 0}
   EnemyRigidbody: {fileID: 5115335411344488150}
   EnemySeeker: {fileID: 5115335411344488151}
 --- !u!58 &5115335411344488152
@@ -234,3 +233,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5d81009b2391047ac6f41263ae448b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyDeathAnimation: {fileID: 4586559040831576174, guid: 180969439b067e7439978dfab43a5417, type: 3}
