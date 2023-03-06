@@ -19,6 +19,7 @@ namespace Demo.Behaviours.Enemy
         private int _minWaitBetweenPlays = 4;
         private int _maxWaitBetweenPlays = 10;
         private float _waitTimeCountdown;
+        private string MonsterSound = "Monster";
         
         private void Start()
         {
@@ -26,7 +27,7 @@ namespace Demo.Behaviours.Enemy
             Resistance = 0.8f;
             _strength = 20;
             _random = new Random();
-            _audioSource = SoundManager.Instance.GetSource("Monster");
+            _audioSource = SoundManager.Instance.GetSource(MonsterSound);
             _waitTimeCountdown = _random.Next(3,5);
         }
 
@@ -41,9 +42,7 @@ namespace Demo.Behaviours.Enemy
             {
                 if (_waitTimeCountdown < 0f)
                 {
-                    // currentClip = audioClips[Random.Range(0, audioClips.Count)];
-                    // source.clip = currentClip;
-                    _audioSource.Play();
+                    SoundManager.Instance.Play(MonsterSound);
                     _waitTimeCountdown = _random.Next(_minWaitBetweenPlays, _maxWaitBetweenPlays);
                 }
                 else
@@ -89,8 +88,5 @@ namespace Demo.Behaviours.Enemy
                 // Damage(_strength);
             }
         }
-
-
-
     }
 }

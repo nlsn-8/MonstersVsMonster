@@ -16,13 +16,17 @@ namespace Demo.Behaviours.Player
         public SpriteRenderer PlayerSprite;
 
         public GameObject DeathAnimation;
-        public HealthBar healthBar;
+        private GameObject _healthbarObj; 
+        private HealthBar _healthBar; 
 
         private void Start()
         {
             Health = 100;
             Resistance = 0.8f;
-            healthBar.SetMaxHealth((int)Health);
+            _healthbarObj = GameObject.Find("HealthBar");
+            if(_healthbarObj == null ) return;
+            _healthBar = _healthbarObj.GetComponent<HealthBar>();
+            _healthBar.SetMaxHealth((int)Health);
         }
 
         public void Damage(int damage)
@@ -32,7 +36,7 @@ namespace Demo.Behaviours.Player
             
             // play hit sound
             SoundManager.Instance.Play("Hit");
-            healthBar.SetHealth((int)Health);
+            _healthBar.SetHealth((int)Health);
             if(Health <= 0)
             {
                 Die();
@@ -57,6 +61,7 @@ namespace Demo.Behaviours.Player
 
         void Die()
         {
+            GameManager.GameFinished();
             // play death sound
             SoundManager.Instance.Play("EnemyDeath");
             // play death animation

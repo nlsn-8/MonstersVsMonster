@@ -8,28 +8,61 @@ namespace Demo.Managers
 {
     public class SpawnManager : MonoBehaviour
     {
+        public SoundManager soundManager;
+        public GameObject PlayerPrefab;
+        public Transform PlayerSpawnPoint;
         public GameObject[] EnemyPrefabs;
         public Transform[] SpawnPoints;
-
-        public SoundManager soundManager;
 
         private Random _random;
         private int _randomPosition;
         private int _randomEnemy;
+        private bool _hasGameFinished = false;
+        private GameObject EnemyInstantiated;
+        private List<GameObject> EnemiesInstantiated;
+
+        private void OnEnable()
+        {
+            GameManager.GameHasFinished += GameFinished;
+            GameManager.GameHasStarted += GameStarted;
+        }
+
+        private void OnDisable()
+        {
+            GameManager.GameHasFinished -= GameFinished;
+            GameManager.GameHasStarted -= GameStarted;
+        }
 
         // Start is called before the first frame update
         void Start()
         {
             _random = new Random();
+            EnemiesInstantiated = new();
             InvokeRepeating("SpawnEnemies", 2f, 9f);
         }
 
         private void SpawnEnemies()
         {
+            if(_hasGameFinished) return;
             _randomPosition = _random.Next(0, SpawnPoints.Length);
             _randomEnemy = _random.Next(0, EnemyPrefabs.Length);
-            Instantiate(EnemyPrefabs[_randomEnemy], SpawnPoints[_randomPosition].position, Quaternion.identity);
+            EnemyInstantiated = Instantiate(EnemyPrefabs[_randomEnemy], SpawnPoints[_randomPosition].position, Quaternion.identity);
+            EnemiesInstantiated.Add(EnemyInstantiated);
             soundManager.Play("Spawn");
+        }
+
+        private void GameFinished()
+        {
+            _hasGameFinished = true;
+        }
+        private void GameStarted()
+        {
+            _hasGameFinished = false;
+            Instantiate(PlayerPrefab, PlayerSpawnPoint.position, Quaternion.identity);
+            foreach (var go in EnemiesInstantiated)
+            {
+                Destroy(go);
+            }
         }
     }
 }

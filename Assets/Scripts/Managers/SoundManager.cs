@@ -9,6 +9,7 @@ namespace Demo.Managers
     {
         public Sound[] Sounds;
         private static Dictionary<string, float> _soundTimerDictionary;
+        private bool _hasGameFinished = false;
 
         private static SoundManager _instance;
         public static SoundManager Instance
@@ -17,6 +18,18 @@ namespace Demo.Managers
             {
                 return _instance;
             }
+        }
+
+        private void OnEnable()
+        {
+            GameManager.GameHasFinished += GameFinished;
+            GameManager.GameHasStarted += GameStarted;
+        }
+
+        private void OnDisable()
+        {
+            GameManager.GameHasFinished -= GameFinished;
+            GameManager.GameHasStarted -= GameStarted;
         }
 
         private void Awake()
@@ -61,6 +74,7 @@ namespace Demo.Managers
 
         public void Play(string name)
         {
+            if(_hasGameFinished) return;
             Sound sound = Array.Find(Sounds, s => s.name == name);
 
             if (sound == null)
@@ -128,6 +142,16 @@ namespace Demo.Managers
             }
             
             return sound.source;
+        }
+
+        private void GameFinished()
+        {
+            _hasGameFinished = true;
+        }
+
+        private void GameStarted()
+        {
+            _hasGameFinished = false;
         }
     }
 }
