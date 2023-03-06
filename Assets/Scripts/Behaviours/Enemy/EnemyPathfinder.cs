@@ -36,6 +36,7 @@ namespace Demo.Behaviours.Enemy
 
         private void UpdatePath()
         {
+            if(_playerTarget == null ) return;
             // make sure we aren't making a new path if previous one hasn't finished
             if(EnemySeeker.IsDone())
             {

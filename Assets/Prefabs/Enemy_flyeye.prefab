@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4457211670270554629}
   - component: {fileID: 4457211670270554628}
   - component: {fileID: 4457211670270554632}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy_flyeye
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 4457211671448701561}
   - component: {fileID: 4457211671448701567}
   - component: {fileID: 4457211671448701566}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bat_sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
