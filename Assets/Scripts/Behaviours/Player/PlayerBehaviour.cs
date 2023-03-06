@@ -11,6 +11,10 @@ namespace Demo.Behaviours.Player
         public float Health {get;set;}
         public float Resistance {get;set;}
 
+        private float _invulnerabilityDuration = 1f;
+        private int _numberOfFlashes = 3;
+        public SpriteRenderer PlayerSprite;
+
         public GameObject DeathAnimation;
         public HealthBar healthBar;
 
@@ -34,7 +38,21 @@ namespace Demo.Behaviours.Player
                 Die();
                 return;
             }
+            StartCoroutine(Invulnerability());
             // play damage animation
+        }
+
+        private IEnumerator Invulnerability()
+        {
+            Physics2D.IgnoreLayerCollision(9,8,true);
+            for(int i = 0; i<_numberOfFlashes;i++)
+            {
+                PlayerSprite.color = new Color(1,0,0,0.5f);
+                yield return new WaitForSeconds(_invulnerabilityDuration/_numberOfFlashes);
+                PlayerSprite.color = Color.white;
+                yield return new WaitForSeconds(_invulnerabilityDuration/_numberOfFlashes);
+            }
+            Physics2D.IgnoreLayerCollision(9,8,false);
         }
 
         void Die()

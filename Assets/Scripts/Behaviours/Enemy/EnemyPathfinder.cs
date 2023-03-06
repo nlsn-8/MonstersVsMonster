@@ -28,6 +28,7 @@ namespace Demo.Behaviours.Enemy
         void Start()
         {
             _playerObject = GameObject.Find("Player");
+            if(_playerObject == null ) return;
             _playerTarget = _playerObject.GetComponent<Transform>();
 
             // method's name, amount of time to wait until the callback method, repeat rate
