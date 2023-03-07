@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7979882943491395661}
   - component: {fileID: 7979882943491395697}
   - component: {fileID: 7979882943491395699}
+  - component: {fileID: 1669154902824216408}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -316,7 +317,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerSprite: {fileID: 7979882944425879103}
   DeathAnimation: {fileID: 4586559040831576174, guid: 180969439b067e7439978dfab43a5417, type: 3}
-  healthBar: {fileID: 0}
+--- !u!114 &1669154902824216408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7979882943491395663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daf82633080d04b41b30f6d4eb0d3494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7979882943738482004
 GameObject:
   m_ObjectHideFlags: 0
