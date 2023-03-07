@@ -73,6 +73,8 @@ namespace Demo.Behaviours.Enemy
             SoundManager.Instance.Play("EnemyDeath");
             // play death animation
             Instantiate(EnemyDeathAnimation, transform.position, Quaternion.identity);
+            // Update death counter
+            GameManager.Instance.AddToCount(1);
             Destroy(this.gameObject);
         }
 
