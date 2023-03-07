@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 
+using Demo.Managers;
+
 namespace Demo.Behaviours.Enemy
 {
     [RequireComponent(typeof(Seeker))]
@@ -27,7 +29,7 @@ namespace Demo.Behaviours.Enemy
         // Start is called before the first frame update
         void Start()
         {
-            _playerObject = GameObject.Find("Player");
+            _playerObject = SpawnManager.GetGameObject();
             if(_playerObject == null ) return;
             _playerTarget = _playerObject.GetComponent<Transform>();
 

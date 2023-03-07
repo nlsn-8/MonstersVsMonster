@@ -14,6 +14,7 @@ namespace Demo.Managers
         public GameObject[] EnemyPrefabs;
         public Transform[] SpawnPoints;
 
+        private static GameObject _Player;
         private Random _random;
         private int _randomPosition;
         private int _randomEnemy;
@@ -33,11 +34,16 @@ namespace Demo.Managers
             GameManager.GameHasStarted -= GameStarted;
         }
 
-        // Start is called before the first frame update
-        void Start()
+        private void Awake()
         {
             _random = new Random();
             EnemiesInstantiated = new();
+            _Player = Instantiate(PlayerPrefab, PlayerSpawnPoint.position, Quaternion.identity);
+        }
+
+        // Start is called before the first frame update
+        void Start()
+        {
             InvokeRepeating("SpawnEnemies", 2f, 9f);
         }
 
@@ -58,11 +64,16 @@ namespace Demo.Managers
         private void GameStarted()
         {
             _hasGameFinished = false;
-            Instantiate(PlayerPrefab, PlayerSpawnPoint.position, Quaternion.identity);
+            _Player = Instantiate(PlayerPrefab, PlayerSpawnPoint.position, Quaternion.identity);
             foreach (var go in EnemiesInstantiated)
             {
                 Destroy(go);
             }
+        }
+
+        public static GameObject GetGameObject()
+        {
+            return _Player;
         }
     }
 }
