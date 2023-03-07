@@ -46,6 +46,8 @@ namespace Demo.Managers
         public void OnClickStartGame()
         {
             GameStarted();
+            _enemyKills = 0;
+            AddToCount(_enemyKills);
         }
 
         public void AddToCount(int i)
