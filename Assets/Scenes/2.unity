@@ -26770,7 +26770,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70.7
+  m_fontSize: 65.1
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -35176,7 +35176,7 @@ GameObject:
   - component: {fileID: 2054852111}
   - component: {fileID: 2054852110}
   m_Layer: 7
-  m_Name: Kills
+  m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35222,7 +35222,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'KILLS: '
+  m_text: 'SCORE: '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a03e8a1bfdcb23d4ca9e5caf20ccce51, type: 2}
   m_sharedMaterial: {fileID: 1743700419650991040, guid: a03e8a1bfdcb23d4ca9e5caf20ccce51, type: 2}
@@ -35249,7 +35249,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70.7
+  m_fontSize: 65.1
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
