@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using Demo.Behaviours.Weapon;
+using Demo.Behaviours;
 using Demo.Managers;
 
 namespace Demo.Behaviours.Player
@@ -23,8 +24,7 @@ namespace Demo.Behaviours.Player
             if (_canShoot && Time.time > _nextFire)
             {
                 _nextFire = Time.time + _fireRate;
-                Instantiate(BulletPrefab, FirePoint.position, FirePoint.rotation);
-                SoundManager.Instance.Play("Shoot");
+                Shoot();
             }
         }
         public void UpdateMovementValue(Vector2 playerMovement)
@@ -33,22 +33,21 @@ namespace Demo.Behaviours.Player
             // BulletPrefabBehaviour.PlayerBulletSpeed = playerMovement.x;
         }
 
-        public void Shoot()
+        public void CanShoot()
         {
-            // if(Mathf.Approximately(_playerMovement.sqrMagnitude,0) && AnimationEnded)
-            // {
-            //     _canShoot = true;
-            // }
-            // else if(_playerMovement.x != 0)
-            // {
-            //     _canShoot = true;
-            // }
             _canShoot=true;
         }
 
         public void CannotShoot()
         {
             _canShoot=false;
+        }
+
+        private void Shoot()
+        {
+            Instantiate(BulletPrefab, FirePoint.position, FirePoint.rotation);
+            CameraShakeBehaviour.Instance.ShakeCamera(0.5f,0.2f);
+            SoundManager.Instance.Play("Shoot");
         }
     }
 }

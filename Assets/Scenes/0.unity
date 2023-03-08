@@ -8303,14 +8303,6 @@ MonoBehaviour:
     isLoop: 0
     playOnAwake: 0
     hasCooldown: 0
-  - name: Music
-    source: {fileID: 0}
-    clip: {fileID: 8300000, guid: e0b53e44b5908484bb1b360cdc02afd7, type: 3}
-    volume: 0.7
-    pitch: 0
-    isLoop: 1
-    playOnAwake: 1
-    hasCooldown: 0
   - name: Start
     source: {fileID: 0}
     clip: {fileID: 8300000, guid: 0f2549a93aa4497469c296e0a03bc137, type: 3}
@@ -8318,6 +8310,14 @@ MonoBehaviour:
     pitch: 3
     isLoop: 0
     playOnAwake: 0
+    hasCooldown: 0
+  - name: Music
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: 5123d2d15a372384dad1bb431d6ffeae, type: 3}
+    volume: 1
+    pitch: 1
+    isLoop: 1
+    playOnAwake: 1
     hasCooldown: 0
 --- !u!1 &1278784893
 GameObject:

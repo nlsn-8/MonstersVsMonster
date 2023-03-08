@@ -39,7 +39,7 @@ namespace Demo.Behaviours.Player
             {
                 _activateWeapon = true;
                 PlayerAnimation.PlayShootAnimation(_activateWeapon);
-                PlayerWeapon.Shoot();
+                PlayerWeapon.CanShoot();
             }
             else if(context.canceled)
             {
