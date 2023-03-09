@@ -1,0 +1,20 @@
+{
+    "name": "Player",
+    "rootNamespace": "Demo.Behaviours.Player",
+    "references": [
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:64d48b5cc8066b44eb726e9650cd23bc",
+        "GUID:a940e91d3688c924eb96fe7ad06da0db",
+        "GUID:28e86f7bad350c6439bb87106f044b4b",
+        "GUID:4307f53044263cf4b835bd812fc161a4"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

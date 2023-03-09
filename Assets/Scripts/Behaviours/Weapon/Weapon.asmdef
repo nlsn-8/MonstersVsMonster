@@ -1,0 +1,16 @@
+{
+    "name": "Weapon",
+    "rootNamespace": "Demo.Behaviours.Weapon",
+    "references": [
+        "GUID:a940e91d3688c924eb96fe7ad06da0db"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
