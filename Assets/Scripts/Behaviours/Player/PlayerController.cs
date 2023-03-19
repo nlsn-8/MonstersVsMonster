@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+using Demo.Managers;
 
 namespace Demo.Behaviours.Player
 {
@@ -10,18 +11,34 @@ namespace Demo.Behaviours.Player
     [RequireComponent(typeof(BoxCollider2D))]
     [RequireComponent(typeof(PlayerInput))]
     [RequireComponent(typeof(PlayerMovementBehaviour))]
+    [RequireComponent(typeof(PlayerInput))]
 
     public class PlayerController : MonoBehaviour
     {
         public PlayerMovementBehaviour PlayerMovement;
         public PlayerAnimationBehaviour PlayerAnimation;
         public PlayerWeaponBehaviour PlayerWeapon;
+        public PlayerInput PlayerInputs;
         private Vector2 _movement;
         private bool _activateWeapon;
 
+        private string _actionMapPlayerControls = "Player";
+        private string _actionMapUIControls = "UI";
+
+        private void OnEnable()
+        {
+            GameManager.Instance.SwitchPlayerInputMap += UpdateInputState;
+        }
+
+        private void OnDisable()
+        {
+            GameManager.Instance.SwitchPlayerInputMap -= UpdateInputState;
+        }
+
+        #region InputEvents
         public void OnMove(InputAction.CallbackContext context)
         {
-            _movement = context.ReadValue<Vector2>();
+            _movement = context.ReadValue<Vector2>().normalized;
         }
 
         public void OnJump(InputAction.CallbackContext context)
@@ -71,7 +88,17 @@ namespace Demo.Behaviours.Player
                 PlayerAnimation.PlayStandAnimation();
             }
         }
+        
+        public void OnPause(InputAction.CallbackContext value)
+        {
+            if(value.started)
+            {
+                GameManager.Instance.TogglePauseState();
+            }
+        }
+        #endregion
 
+        #region UpdateBehaviours
         private void Update()
         {
             UpdatePlayerMovement();
@@ -82,11 +109,41 @@ namespace Demo.Behaviours.Player
         {
             PlayerMovement.UpdateMovementValue(_movement);
         }
+
         private void UpdatePlayerAnimation()
         {
             PlayerAnimation.UpdateMovementValue(PlayerMovement.PlayerMovementVector);
         }
+        #endregion
 
+        #region GameIsPaused
+        private void UpdateInputState(bool isPaused)
+        {
+            switch (isPaused)
+            {
+                case true:
+                    PlayerInputs.DeactivateInput();
+                    EnableUIControls();
+                    break;
+                case false:
+                    EnableGameplayControls();
+                    PlayerInputs.ActivateInput();
+                    break;
+            }
+        }
+
+        private void EnableUIControls()
+        {
+            PlayerInputs.SwitchCurrentActionMap(_actionMapUIControls);
+        }
+
+        private void EnableGameplayControls()
+        {
+            PlayerInputs.SwitchCurrentActionMap(_actionMapPlayerControls);  
+        }
+        #endregion
+
+        #region DetectPlayerCollisions
         private void OnCollisionEnter2D(Collision2D other)
         {
             if(other.gameObject.CompareTag("Ground"))
@@ -109,5 +166,6 @@ namespace Demo.Behaviours.Player
                 PlayerAnimation.IsGrounded = false;
             }
         }
+        #endregion
     }
 }

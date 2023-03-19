@@ -7,6 +7,7 @@ namespace Demo.Managers
 {
     public class SoundManager : MonoBehaviour
     {
+        public GameManager GameManager;
         public Sound[] Sounds;
         private static Dictionary<string, float> _soundTimerDictionary;
         private bool _hasGameFinished = false;

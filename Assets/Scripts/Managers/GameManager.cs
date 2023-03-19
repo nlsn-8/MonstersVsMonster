@@ -8,9 +8,18 @@ namespace Demo.Managers
     public class GameManager : MonoBehaviour
     {
         public UIManager UI;
-        public static Action GameHasStarted;
-        public static Action GameHasFinished;
+        public Action GameHasStarted;
+        public Action GameHasFinished;
+        public Action<bool> SwitchPlayerInputMap;
 
+        private bool _isPaused;
+        public bool IsPaused
+        {
+            get
+            {
+                return _isPaused;
+            }
+        }
         private int _enemyKills;
         private static GameManager _instance;
         public static GameManager Instance
@@ -26,7 +35,7 @@ namespace Demo.Managers
             _instance = this;
         }
 
-        public static void GameStarted()
+        public void GameStarted()
         {
             if(GameHasStarted != null)
             {
@@ -34,7 +43,7 @@ namespace Demo.Managers
             }
         }
 
-        public static void GameFinished()
+        public void GameFinished()
         {
             if(GameHasFinished != null)
             {
@@ -56,5 +65,46 @@ namespace Demo.Managers
             UI.UpdateKillCountText(_enemyKills);
         }
         
+        #region GameIsPaused
+
+        public void TogglePauseState()
+        {
+            PauseGame();
+            UpdateUIMenu();
+        }
+
+        public void PauseGame()
+        {
+            _isPaused = !_isPaused;
+            ChangeTimeScale();
+            ChangePlayerInputMap();
+        }
+
+        private void UpdateUIMenu()
+        {
+            UI.UpdateUIMenu(_isPaused);
+        }
+
+        private void ChangeTimeScale()
+        {
+            float newTimeScale = 0f;
+
+            switch(_isPaused)
+            {
+                case true:
+                    newTimeScale = 0f;
+                    break;
+                case false:
+                    newTimeScale = 1f;
+                    break;
+            }
+            Time.timeScale = newTimeScale;
+        }
+
+        private void ChangePlayerInputMap()
+        {
+            if(SwitchPlayerInputMap != null) SwitchPlayerInputMap(_isPaused);
+        }
+        #endregion
     }
 }

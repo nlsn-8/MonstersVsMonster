@@ -26621,7 +26621,7 @@ GameObject:
   - component: {fileID: 598079028}
   - component: {fileID: 598079029}
   m_Layer: 0
-  m_Name: AudioManager
+  m_Name: SoundManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26654,6 +26654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aee086eaf5ed1ea45b160c2a6eb33641, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 816032629}
   Sounds:
   - name: None
     source: {fileID: 0}
@@ -28134,11 +28135,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6250e1cf7e491194daf5e4932aa43977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KillCountText: {fileID: 717052715}
-  soundManager: {fileID: 0}
-  GameOverPanel: {fileID: 1790143258}
-  slider: {fileID: 0}
+  GameManager: {fileID: 816032629}
+  soundManager: {fileID: 598079029}
   ProgressText: {fileID: 0}
+  ProgressSlider: {fileID: 0}
+  KillCountText: {fileID: 717052715}
+  GameOverPanel: {fileID: 1790143258}
+  PauseMenuPanel: {fileID: 947453391}
 --- !u!1 &1377221732
 GameObject:
   m_ObjectHideFlags: 0
@@ -28448,6 +28451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1b98ed8dd27672458d86f266249cc1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManager: {fileID: 816032629}
   soundManager: {fileID: 598079029}
   PlayerPrefab: {fileID: 7979882943491395663, guid: 978f3ca1b3e1fed43a6158c485ed0b8f, type: 3}
   PlayerSpawnPoint: {fileID: 2113430897}

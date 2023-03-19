@@ -253,6 +253,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 3bce2e9e-46f3-4841-8698-0fd2bb1b5b1d
     m_ActionName: Player/HideWeapon[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7979882943491395660}
+        m_TargetAssemblyTypeName: Demo.Behaviours.Player.PlayerController, Player
+        m_MethodName: OnPause
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: dc5e7e41-7f9d-43d5-a264-51e70b055429
+    m_ActionName: Player/Pause[/Keyboard/p,/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7979882943491395660}
+        m_TargetAssemblyTypeName: Demo.Behaviours.Player.PlayerController, Player
+        m_MethodName: OnPause
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c92e6320-db2d-40a0-8f51-490414f47728
+    m_ActionName: UI/Pause[/Keyboard/p,/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -273,6 +305,7 @@ MonoBehaviour:
   PlayerMovement: {fileID: 7979882943491395661}
   PlayerAnimation: {fileID: 7979882944425879101}
   PlayerWeapon: {fileID: 7979882943491395697}
+  PlayerInputs: {fileID: 7979882943491395651}
 --- !u!114 &7979882943491395661
 MonoBehaviour:
   m_ObjectHideFlags: 0

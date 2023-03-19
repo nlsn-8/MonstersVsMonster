@@ -9,11 +9,15 @@ namespace Demo.Managers
 {
     public class UIManager : MonoBehaviour
     {
-        public TMP_Text KillCountText;
+        public GameManager GameManager;
         public SoundManager soundManager;
-        public GameObject GameOverPanel;
-        public Slider slider;
+        [Header("Main Scene")]
         public TMP_Text ProgressText;
+        public Slider ProgressSlider;
+        [Header("Game Scene")]
+        public TMP_Text KillCountText;
+        public GameObject GameOverPanel;
+        public GameObject PauseMenuPanel;
 
         private void OnEnable()
         {
@@ -26,13 +30,15 @@ namespace Demo.Managers
             GameManager.GameHasFinished -= GameFinished;
             GameManager.GameHasStarted -= GameStarted;
         }
+
         // Invoked from Start button first scene
         public void OnClickStartGame()
         {
             soundManager.Play("Start");
             LoadLevel(1);
         }
-        public void LoadLevel(int sceneIndex)
+
+        private void LoadLevel(int sceneIndex)
         {
             StartCoroutine(LoadAsynchronously(sceneIndex));
         }
@@ -43,7 +49,7 @@ namespace Demo.Managers
             while(!operation.isDone)
             {
                 float progress = Mathf.Clamp01(operation.progress / .9f);
-                slider.value = progress;
+                ProgressSlider.value = progress;
                 ProgressText.text = progress * 100f + "%";
                 yield return null;
             }
@@ -53,7 +59,6 @@ namespace Demo.Managers
         {
             KillCountText.text = i.ToString();
         }
-
         private void GameFinished()
         {
             GameOverPanel.SetActive(true);
@@ -61,6 +66,10 @@ namespace Demo.Managers
         private void GameStarted()
         {
             GameOverPanel.SetActive(false);
+        }
+        public void UpdateUIMenu(bool isPaused)
+        {
+            PauseMenuPanel.SetActive(isPaused);
         }
     }
 }

@@ -8,6 +8,7 @@ namespace Demo.Managers
 {
     public class SpawnManager : MonoBehaviour
     {
+        public GameManager GameManager;
         public SoundManager soundManager;
         public GameObject PlayerPrefab;
         public Transform PlayerSpawnPoint;
