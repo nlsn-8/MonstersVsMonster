@@ -11,7 +11,7 @@ VisualElement {
 
 .mainText {
     flex-shrink: 0;
-    font-size: 80px;
+    font-size: 100px;
     color: rgb(214, 28, 78);
     -unity-text-align: middle-left;
 }
@@ -53,7 +53,7 @@ VisualElement {
 .button {
     -unity-font: url('project://database/Assets/UI/Font/Hardpixel.OTF?fileID=12800000&guid=42249d276c95e494aac3296b5af04584&type=3#Hardpixel');
     -unity-font-definition: none;
-    font-size: 60px;
+    font-size: 40px;
     border-top-left-radius: 24px;
     border-bottom-left-radius: 24px;
     border-top-right-radius: 24px;
@@ -84,7 +84,7 @@ VisualElement {
 }
 
 .button:hover {
-    font-size: 60px;
+    font-size: 40px;
     -unity-font-definition: none;
     -unity-font: url('project://database/Assets/UI/Font/Hardpixel.OTF?fileID=12800000&guid=42249d276c95e494aac3296b5af04584&type=3#Hardpixel');
     color: rgb(27, 26, 23);
@@ -129,8 +129,8 @@ VisualElement {
     margin-right: 0;
     margin-top: 0;
     margin-bottom: 0;
-    width: 45%;
-    height: 15%;
+    width: 35%;
+    height: 12%;
     flex-shrink: 0;
     flex-basis: auto;
 }
@@ -234,16 +234,6 @@ VisualElement {
     transition-duration: 0.3s;
     transition-timing-function: ease-out;
     color: rgba(241, 238, 233, 255);
-}
-
-.footerButtonContainer {
-    justify-content: space-around;
-    align-items: stretch;
-    flex-direction: row;
-    margin-left: 2%;
-    margin-right: 2%;
-    width: 100%;
-    flex-shrink: 0;
 }
 
 .controlsBinderContainer {
@@ -382,4 +372,108 @@ VisualElement {
     border-bottom-color: rgb(214, 28, 78);
     background-color: rgb(160, 233, 83);
     scale: 1.1 1.1;
+}
+
+.mainMenuContainer {
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+    width: 50%;
+    left: -12%;
+    top: -16%;
+}
+
+.mainMenuMainTitleContainer {
+    width: 100%;
+    flex-wrap: nowrap;
+    position: relative;
+    overflow: visible;
+    align-items: center;
+    justify-content: center;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.mainMenuTitleText {
+    -unity-font: url('project://database/Assets/UI/Font/Hardpixel.OTF?fileID=12800000&guid=42249d276c95e494aac3296b5af04584&type=3#Hardpixel');
+    -unity-font-definition: none;
+    font-size: 130px;
+    color: rgb(214, 28, 78);
+    -unity-paragraph-spacing: -25px;
+    text-shadow: -6px -4px 0 rgb(250, 194, 19);
+    overflow: visible;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainMenuButtonContainer {
+    width: 25%;
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.mainMenuButton {
+    -unity-font: url('project://database/Assets/UI/Font/Hardpixel.OTF?fileID=12800000&guid=42249d276c95e494aac3296b5af04584&type=3#Hardpixel');
+    -unity-font-definition: none;
+    font-size: 46px;
+    color: rgba(241, 238, 233, 255);
+    background-color: rgba(0, 0, 0, 0);
+    border-left-color: rgba(241, 238, 233, 255);
+    border-right-color: rgba(241, 238, 233, 255);
+    border-top-color: rgba(241, 238, 233, 255);
+    border-bottom-color: rgba(241, 238, 233, 255);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+}
+
+.mainMenuButton:hover {
+    -unity-font: url('project://database/Assets/UI/Font/Hardpixel.OTF?fileID=12800000&guid=42249d276c95e494aac3296b5af04584&type=3#Hardpixel');
+    -unity-font-definition: none;
+    font-size: 46px;
+    color: rgb(250, 194, 19);
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+    border-left-color: rgba(241, 238, 233, 255);
+    border-right-color: rgba(241, 238, 233, 255);
+    border-top-color: rgba(241, 238, 233, 255);
+    border-bottom-color: rgba(241, 238, 233, 255);
+    background-color: rgba(0, 0, 0, 0);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+}
+
+.mainMenuButton2 {
+    -unity-font: url('project://database/Assets/UI/Font/Hardpixel.OTF?fileID=12800000&guid=42249d276c95e494aac3296b5af04584&type=3#Hardpixel');
+    -unity-font-definition: none;
+    font-size: 46px;
+    color: rgb(160, 233, 83);
+    border-left-color: rgb(160, 233, 83);
+    border-right-color: rgb(160, 233, 83);
+    border-top-color: rgb(160, 233, 83);
+    border-bottom-color: rgb(160, 233, 83);
+    background-color: rgba(0, 0, 0, 0);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
 }

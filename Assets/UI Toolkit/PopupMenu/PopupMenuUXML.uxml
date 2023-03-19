@@ -35,7 +35,7 @@
                     </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement style="align-items: center; justify-content: space-around; flex-shrink: 0; height: 16%; width: 50%;">
+            <ui:VisualElement class="buttonContainer">
                 <ui:Button text="Close" display-tooltip-when-elided="true" name="CloseButton" class="button closeButton" style="overflow: visible;" />
             </ui:VisualElement>
         </ui:VisualElement>
