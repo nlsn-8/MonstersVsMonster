@@ -1,0 +1,68 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/USS.uss?fileID=7433441132597879392&amp;guid=103787b3b10278443b2e3623fb195600&amp;type=3#USS" />
+    <ui:VisualElement name="MainContainer" class="mainContainer" style="flex-direction: column; align-items: center; justify-content: center; display: flex;">
+        <ui:VisualElement name="MainButtonContainer" class="container" style="scale: 1 1;">
+            <ui:Label text="Controls" display-tooltip-when-elided="true" class="mainText" />
+            <ui:VisualElement name="Container" class="controlsBinderContainer">
+                <ui:VisualElement name="ControlsContainer" class="controlsContainer" style="justify-content: space-between;">
+                    <ui:VisualElement name="RebindTextContainer" class="rebindTextContainer">
+                        <ui:Label text="Move" display-tooltip-when-elided="true" name="MoveLabel" class="controlText" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="RebindButtonContainer" class="rebindButtonContainer rebindMiddleButtonContainer">
+                        <ui:Button display-tooltip-when-elided="true" class="rebindButton" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="RebindButtonContainer" class="rebindButtonContainer">
+                        <ui:Button text="Reset" display-tooltip-when-elided="true" name="ResetButton" class="rebindButton" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="ControlsContainer" class="controlsContainer" style="justify-content: space-between;">
+                    <ui:VisualElement name="RebindTextContainer" class="rebindTextContainer">
+                        <ui:Label text="Jump" display-tooltip-when-elided="true" name="JumpLabel" class="controlText" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="RebindButtonContainer" class="rebindButtonContainer rebindMiddleButtonContainer">
+                        <ui:Button display-tooltip-when-elided="true" class="rebindButton" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="RebindButtonContainer" class="rebindButtonContainer">
+                        <ui:Button text="Reset" display-tooltip-when-elided="true" name="ResetButton" class="rebindButton" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="ControlsContainer" class="controlsContainer" style="justify-content: space-between;">
+                    <ui:VisualElement name="RebindTextContainer" class="rebindTextContainer">
+                        <ui:Label text="Shoot" display-tooltip-when-elided="true" name="ShootLabel" class="controlText" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="RebindButtonContainer" class="rebindButtonContainer rebindMiddleButtonContainer">
+                        <ui:Button display-tooltip-when-elided="true" class="rebindButton" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="RebindButtonContainer" class="rebindButtonContainer">
+                        <ui:Button text="Reset" display-tooltip-when-elided="true" name="ResetButton" class="rebindButton" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="ControlsContainer" class="controlsContainer" style="justify-content: space-between;">
+                    <ui:VisualElement name="RebindTextContainer" class="rebindTextContainer">
+                        <ui:Label text="Duck" display-tooltip-when-elided="true" name="DuckLabel" class="controlText" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="RebindButtonContainer" class="rebindButtonContainer rebindMiddleButtonContainer">
+                        <ui:Button display-tooltip-when-elided="true" class="rebindButton" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="RebindButtonContainer" class="rebindButtonContainer">
+                        <ui:Button text="Reset" display-tooltip-when-elided="true" name="ResetButton" class="rebindButton" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="ControlsContainer" class="controlsContainer" style="justify-content: space-between;">
+                    <ui:VisualElement name="RebindTextContainer" class="rebindTextContainer">
+                        <ui:Label text="Pause" display-tooltip-when-elided="true" name="PauseLabel" class="controlText" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="RebindButtonContainer" class="rebindButtonContainer rebindMiddleButtonContainer">
+                        <ui:Button display-tooltip-when-elided="true" class="rebindButton" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="RebindButtonContainer" class="rebindButtonContainer">
+                        <ui:Button text="Reset" display-tooltip-when-elided="true" name="ResetButton" class="rebindButton" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement class="buttonContainer">
+                <ui:Button text="Back" display-tooltip-when-elided="true" name="BackButton" class="button closeButton" style="overflow: visible;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
