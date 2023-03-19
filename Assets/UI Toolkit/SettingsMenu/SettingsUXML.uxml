@@ -10,8 +10,9 @@
                 <ui:Button text="Controls" display-tooltip-when-elided="true" name="ControlsButton" class="button" style="overflow: visible;" />
             </ui:VisualElement>
             <ui:VisualElement class="buttonContainer">
-                <ui:Button text="Close" display-tooltip-when-elided="true" name="CloseButton" class="button closeButton" style="overflow: visible;" />
+                <ui:Button text="Back" display-tooltip-when-elided="true" name="BackButton" class="button closeButton" style="overflow: visible;" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
+    <ui:GroupBox />
 </ui:UXML>

@@ -18,6 +18,9 @@ namespace Demo.Managers
         public TMP_Text KillCountText;
         public GameObject GameOverPanel;
         public GameObject PauseMenuPanel;
+        public GameObject SettingsPanel;
+        public GameObject RebindingPanel;
+        public GameObject PopupPanel;
 
         private void OnEnable()
         {
@@ -67,9 +70,58 @@ namespace Demo.Managers
         {
             GameOverPanel.SetActive(false);
         }
-        public void UpdateUIMenu(bool isPaused)
+
+        public void PauseMenu(bool isPaused)
         {
             PauseMenuPanel.SetActive(isPaused);
+            SettingsMenu(false);
+            RebindMenu(false);
+            ClosePopupMenu();
+        }
+        public void ClosePauseMenu()
+        {
+            PauseMenuPanel.SetActive(false);
+        }
+        public void OpenPauseMenu()
+        {
+            PauseMenuPanel.SetActive(true);
+        }
+
+        public void SettingsMenu(bool boolean)
+        {
+            SettingsPanel.SetActive(boolean);
+        }
+
+        public void RebindMenu(bool boolean)
+        {
+            RebindingPanel.SetActive(boolean);
+        }
+
+        public void ClosePopupMenu()
+        {
+            PopupPanel.SetActive(false);
+        }
+
+        public void OnClickGoBackToSettings()
+        {
+            RebindMenu(false);
+            SettingsMenu(true);
+        }
+        public void OnClickGoBackToPause()
+        {
+            SettingsMenu(false);
+            OpenPauseMenu();
+        }
+
+        public void OnClickSettings()
+        {
+            SettingsMenu(true);
+            ClosePauseMenu();
+        }
+        public void OnClickControls()
+        {
+            RebindMenu(true);
+            SettingsMenu(false);
         }
     }
 }

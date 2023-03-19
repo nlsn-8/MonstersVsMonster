@@ -67,10 +67,17 @@ namespace Demo.Managers
         
         #region GameIsPaused
 
-        public void TogglePauseState()
+        public void TogglePauseState(bool popupMenu = false)
         {
             PauseGame();
-            UpdateUIMenu();
+            if(!popupMenu)
+            {
+                UpdateUIMenu();
+            }
+            else if(popupMenu)
+            {
+                ClosePopupMenu();
+            }
         }
 
         public void PauseGame()
@@ -80,9 +87,14 @@ namespace Demo.Managers
             ChangePlayerInputMap();
         }
 
+        private void ClosePopupMenu()
+        {
+            UI.ClosePopupMenu();
+        }
+
         private void UpdateUIMenu()
         {
-            UI.UpdateUIMenu(_isPaused);
+            UI.PauseMenu(_isPaused);
         }
 
         private void ChangeTimeScale()
