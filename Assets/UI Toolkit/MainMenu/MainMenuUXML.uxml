@@ -5,7 +5,7 @@
             <ui:VisualElement name="MainButtonContainer" class="mainMenuMainTitleContainer" style="scale: 1 1; align-items: center; justify-content: center; -unity-text-align: middle-center; font-size: 100px; flex-shrink: 1;">
                 <ui:Label text="MONSTERS&#10;VS&#10;MONSTER" display-tooltip-when-elided="true" class="mainMenuTitleText" />
             </ui:VisualElement>
-            <ui:VisualElement class="mainMenuButtonContainer" style="display: none;">
+            <ui:VisualElement class="mainMenuButtonContainer" style="display: flex;">
                 <ui:Button text="Play" display-tooltip-when-elided="true" name="PlayButton" class="mainMenuButton" style="overflow: visible;" />
             </ui:VisualElement>
             <ui:VisualElement class="mainMenuButtonContainer" style="display: none;">

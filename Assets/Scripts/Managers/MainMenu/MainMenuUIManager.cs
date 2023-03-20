@@ -20,6 +20,7 @@ namespace Demo.Managers
         public void OnClickStartGame()
         {
             SoundManager.Play("Start");
+            // SceneManager.LoadScene("1");
             LoadLevel(1);
         }
 
