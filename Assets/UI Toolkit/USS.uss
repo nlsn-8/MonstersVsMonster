@@ -442,10 +442,10 @@ VisualElement {
     color: rgb(250, 194, 19);
     transition-duration: 0.3s;
     transition-timing-function: ease-out;
-    border-left-color: rgb(241, 238, 233);
-    border-right-color: rgb(241, 238, 233);
-    border-top-color: rgb(241, 238, 233);
-    border-bottom-color: rgb(241, 238, 233);
+    border-left-color: rgb(250, 194, 19);
+    border-right-color: rgb(250, 194, 19);
+    border-top-color: rgb(250, 194, 19);
+    border-bottom-color: rgb(250, 194, 19);
     background-color: rgba(0, 0, 0, 0);
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
@@ -455,6 +455,7 @@ VisualElement {
     border-right-width: 2px;
     border-top-width: 2px;
     border-bottom-width: 2px;
+    scale: 1.1 1.1;
 }
 
 .mainMenuButton2 {

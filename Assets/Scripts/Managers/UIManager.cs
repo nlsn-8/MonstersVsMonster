@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using TMPro;
 
 namespace Demo.Managers
@@ -10,10 +8,6 @@ namespace Demo.Managers
     public class UIManager : MonoBehaviour
     {
         public GameManager GameManager;
-        public SoundManager soundManager;
-        [Header("Main Scene")]
-        public TMP_Text ProgressText;
-        public Slider ProgressSlider;
         [Header("Game Scene")]
         public TMP_Text KillCountText;
         public GameObject GameOverPanel;
@@ -32,30 +26,6 @@ namespace Demo.Managers
         {
             GameManager.GameHasFinished -= GameFinished;
             GameManager.GameHasStarted -= GameStarted;
-        }
-
-        // Invoked from Start button first scene
-        public void OnClickStartGame()
-        {
-            soundManager.Play("Start");
-            LoadLevel(1);
-        }
-
-        private void LoadLevel(int sceneIndex)
-        {
-            StartCoroutine(LoadAsynchronously(sceneIndex));
-        }
-
-        private IEnumerator LoadAsynchronously (int sceneIndex)
-        {
-            AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
-            while(!operation.isDone)
-            {
-                float progress = Mathf.Clamp01(operation.progress / .9f);
-                ProgressSlider.value = progress;
-                ProgressText.text = progress * 100f + "%";
-                yield return null;
-            }
         }
 
         public void UpdateKillCountText(int i)
