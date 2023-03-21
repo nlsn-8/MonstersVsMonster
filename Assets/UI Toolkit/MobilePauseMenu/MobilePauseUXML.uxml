@@ -1,0 +1,14 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/USS.uss?fileID=7433441132597879392&amp;guid=103787b3b10278443b2e3623fb195600&amp;type=3#USS" />
+    <ui:VisualElement name="MainContainer" class="mainContainer" style="flex-direction: column; align-items: center; justify-content: center; display: flex;">
+        <ui:VisualElement name="MainButtonContainer" class="container" style="scale: 1 1;">
+            <ui:Label text="Pause" display-tooltip-when-elided="true" class="mainText" />
+            <ui:VisualElement class="buttonContainer" style="display: none;">
+                <ui:Button text="Settings" display-tooltip-when-elided="true" name="SettingsButton" class="button" style="overflow: visible;" />
+            </ui:VisualElement>
+            <ui:VisualElement class="buttonContainer">
+                <ui:Button text="Close" display-tooltip-when-elided="true" name="CloseButton" class="button closeButton" style="overflow: visible;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

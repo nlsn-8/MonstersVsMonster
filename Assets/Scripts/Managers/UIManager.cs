@@ -15,17 +15,27 @@ namespace Demo.Managers
         public GameObject SettingsPanel;
         public GameObject RebindingPanel;
         public GameObject PopupPanel;
+        public GameObject MobilePausePanel;
+        public GameObject MobilePanel;
 
         private void OnEnable()
         {
             GameManager.GameHasFinished += GameFinished;
             GameManager.GameHasStarted += GameStarted;
+            MobileDetector.MobileDevice += MobileDevice;
         }
 
         private void OnDisable()
         {
             GameManager.GameHasFinished -= GameFinished;
             GameManager.GameHasStarted -= GameStarted;
+            MobileDetector.MobileDevice -= MobileDevice;
+        }
+
+        private void MobileDevice()
+        {
+            MobilePanel.SetActive(true);
+            PopupPanel.SetActive(false);
         }
 
         public void UpdateKillCountText(int i)
@@ -92,6 +102,12 @@ namespace Demo.Managers
         {
             RebindMenu(true);
             SettingsMenu(false);
+        }
+
+        public void MobilePauseGame(bool pause)
+        {
+            MobilePausePanel.SetActive(pause);
+            MobilePanel.SetActive(!pause);
         }
     }
 }

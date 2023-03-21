@@ -3,34 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Demo.Managers
+using Demo.Managers;
+
+namespace Demo.UIToolkit
 {
-    public class UIToolkitPause : MonoBehaviour
+    public class UIToolkitMobilePause : MonoBehaviour
     {
-        public UIManager UI;
         public GameManager GM;
         public UIDocument document;
-        private Button _settingsButton;
         private Button _closeButton;
 
         private void OnEnable()
         {
             VisualElement root = document.rootVisualElement;
 
-            _settingsButton = root.Q<Button>("SettingsButton");
             _closeButton = root.Query<Button>("CloseButton");
-            _settingsButton.RegisterCallback<ClickEvent>(OpenSettingsPanel);
             _closeButton.RegisterCallback<ClickEvent>(UnpauseGame);
-        }
-
-        private void OpenSettingsPanel(ClickEvent e)
-        {
-            UI.OnClickSettings();
         }
         
         private void UnpauseGame(ClickEvent e)
         {
-            GM.TogglePauseState();
+            GM.MobilePauseState();
         }
     }
 }

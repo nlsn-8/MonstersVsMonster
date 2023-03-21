@@ -298,7 +298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Action: {fileID: 2527959347090756653, guid: 314c4760d0e7c3d4d86d784f7ed8f775, type: 3}
   m_BindingId: c81ee2ac-77c2-4891-9132-25875af60267
-  m_DisplayStringOptions: 0
+  m_DisplayStringOptions: 1
   m_ActionLabel: {fileID: 7768974945478880965}
   m_BindingText: {fileID: 3046839225739885181}
   m_RebindOverlay: {fileID: 0}
@@ -816,7 +816,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ' /Q/ /R'
+  m_text: ' /A/ /D'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a03e8a1bfdcb23d4ca9e5caf20ccce51, type: 2}
   m_sharedMaterial: {fileID: 1743700419650991040, guid: a03e8a1bfdcb23d4ca9e5caf20ccce51, type: 2}
@@ -1099,7 +1099,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Action: {fileID: 1466771420653181059, guid: 314c4760d0e7c3d4d86d784f7ed8f775, type: 3}
   m_BindingId: 89f5056d-b7bf-41d3-8b6e-d50c8339edab
-  m_DisplayStringOptions: 0
+  m_DisplayStringOptions: 1
   m_ActionLabel: {fileID: 8245265817490151341}
   m_BindingText: {fileID: 8245265817759632079}
   m_RebindOverlay: {fileID: 0}
@@ -1386,7 +1386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Action: {fileID: 8910037096736555070, guid: 314c4760d0e7c3d4d86d784f7ed8f775, type: 3}
   m_BindingId: df20df7a-fc61-4c3c-9121-8145def55b1d
-  m_DisplayStringOptions: 0
+  m_DisplayStringOptions: 1
   m_ActionLabel: {fileID: 8245265816858610933}
   m_BindingText: {fileID: 8245265816828439010}
   m_RebindOverlay: {fileID: 0}
@@ -1517,7 +1517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Action: {fileID: 8987730886647690833, guid: 314c4760d0e7c3d4d86d784f7ed8f775, type: 3}
   m_BindingId: 4fbd5a3e-f2ef-49a5-a219-31ce7488aa7b
-  m_DisplayStringOptions: 0
+  m_DisplayStringOptions: 1
   m_ActionLabel: {fileID: 8245265817888079464}
   m_BindingText: {fileID: 8245265817766597147}
   m_RebindOverlay: {fileID: 0}
@@ -2367,7 +2367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Action: {fileID: -4868175729506789701, guid: 314c4760d0e7c3d4d86d784f7ed8f775, type: 3}
   m_BindingId: 05f6913d-c316-48b2-a6bb-e225f14c7960
-  m_DisplayStringOptions: 3
+  m_DisplayStringOptions: 1
   m_ActionLabel: {fileID: 8245265816421763040}
   m_BindingText: {fileID: 8245265817039264859}
   m_RebindOverlay: {fileID: 0}
@@ -2447,7 +2447,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Left Button [Mouse]
+  m_text: Left Button
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a03e8a1bfdcb23d4ca9e5caf20ccce51, type: 2}
   m_sharedMaterial: {fileID: 1743700419650991040, guid: a03e8a1bfdcb23d4ca9e5caf20ccce51, type: 2}
@@ -3473,7 +3473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Action: {fileID: -9021119493579287640, guid: 314c4760d0e7c3d4d86d784f7ed8f775, type: 3}
   m_BindingId: ead6af99-ac39-4563-9a7e-ea42dc591dfe
-  m_DisplayStringOptions: 0
+  m_DisplayStringOptions: 1
   m_ActionLabel: {fileID: 8245265816778832973}
   m_BindingText: {fileID: 8245265816088292621}
   m_RebindOverlay: {fileID: 0}

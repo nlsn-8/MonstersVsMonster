@@ -89,6 +89,11 @@ namespace Demo.Managers
             }
         }
 
+        public void MobilePauseState()
+        {
+            PauseGame();
+            UI.MobilePauseGame(_isPaused);
+        }
         public void PauseGame()
         {
             _isPaused = !_isPaused;

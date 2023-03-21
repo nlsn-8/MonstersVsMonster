@@ -1,0 +1,17 @@
+{
+    "name": "UIToolkitScripts",
+    "rootNamespace": "Demo.UIToolkit",
+    "references": [
+        "GUID:28e86f7bad350c6439bb87106f044b4b",
+        "GUID:564e31c71f5fe8f40bbedb508a81589d"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Demo.Managers
+using Demo.Managers;
+
+namespace Demo.UIToolkit
 {
     public class UIToolkitGameOver : MonoBehaviour
     {

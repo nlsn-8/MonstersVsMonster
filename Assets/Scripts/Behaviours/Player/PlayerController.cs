@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,12 +22,14 @@ namespace Demo.Behaviours.Player
         public PlayerInput PlayerInputs;
         private Vector2 _movement;
         private bool _activateWeapon;
+        public static event Action<PlayerController> PlayerControllerInstance;
 
         private string _actionMapPlayerControls = "Player";
         private string _actionMapUIControls = "UI";
 
         private void OnEnable()
         {
+            if(PlayerControllerInstance != null) PlayerControllerInstance(this);
             GameManager.Instance.SwitchPlayerInputMap += UpdateInputState;
         }
 
