@@ -2,7 +2,9 @@
     <Style src="project://database/Assets/UI%20Toolkit/USS.uss?fileID=7433441132597879392&amp;guid=103787b3b10278443b2e3623fb195600&amp;type=3#USS" />
     <ui:VisualElement name="MainContainer" class="mainContainer" style="flex-direction: column; align-items: center; justify-content: center; display: flex;">
         <ui:VisualElement name="MainButtonContainer" class="container" style="scale: 1 1;">
-            <ui:Label text="Controls" display-tooltip-when-elided="true" class="mainText" />
+            <ui:VisualElement class="textContainer">
+                <ui:Label text="Controls" display-tooltip-when-elided="true" class="mainText" />
+            </ui:VisualElement>
             <ui:VisualElement name="Container" class="controlsBinderContainer">
                 <ui:VisualElement name="ControlsContainer" class="controlsContainer" style="justify-content: space-between;">
                     <ui:VisualElement name="RebindTextContainer" class="rebindTextContainer">

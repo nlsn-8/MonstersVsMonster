@@ -1,12 +1,14 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/USS.uss?fileID=7433441132597879392&amp;guid=103787b3b10278443b2e3623fb195600&amp;type=3#USS" />
     <ui:VisualElement class="mainContainer">
-        <ui:VisualElement style="align-items: center; justify-content: space-between; right: -38%; width: 10%; height: 80%;">
-            <ui:VisualElement class="mobileButtonContainer">
-                <ui:Button text="II" display-tooltip-when-elided="true" name="PauseButton" class="mobileButton mobilePauseButton" />
-            </ui:VisualElement>
-            <ui:VisualElement class="mobileButtonContainer">
-                <ui:Button text="Jump" display-tooltip-when-elided="true" name="JumpButton" class="mobileButton" />
+        <ui:VisualElement style="width: 100%; height: 100%;">
+            <ui:VisualElement class="achorToRight">
+                <ui:VisualElement class="buttonContainer">
+                    <ui:Button text="II" display-tooltip-when-elided="true" name="PauseButton" class="mobilePauseButton" />
+                </ui:VisualElement>
+                <ui:VisualElement class="buttonContainer">
+                    <ui:Button text="Jump" display-tooltip-when-elided="true" name="JumpButton" class="mobileButton" />
+                </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
