@@ -42,8 +42,8 @@ namespace Demo.Behaviours.Player
                 Die();
                 return;
             }
-            StartCoroutine(Invulnerability());
             // play damage animation
+            StartCoroutine(Invulnerability());
         }
 
         private IEnumerator Invulnerability()
@@ -61,7 +61,7 @@ namespace Demo.Behaviours.Player
 
         void Die()
         {
-            GameManager.GameFinished();
+            GameManager.Instance.GameFinished();
             // play death sound
             SoundManager.Instance.Play("EnemyDeath");
             // play death animation
