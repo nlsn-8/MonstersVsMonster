@@ -84,11 +84,13 @@ namespace Demo.Behaviours.Player
             {
                 PlayerMovement.Duck();
                 PlayerAnimation.PlayDuckAnimation();
+                PlayerWeapon.FireRate = 0.2f;
             }
             else if(context.canceled)
             {
                 PlayerMovement.Stand();
                 PlayerAnimation.PlayStandAnimation();
+                PlayerWeapon.FireRate = 0.5f;
             }
         }
         

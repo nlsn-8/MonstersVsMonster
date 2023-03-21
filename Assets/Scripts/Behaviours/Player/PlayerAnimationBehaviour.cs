@@ -9,15 +9,7 @@ namespace Demo.Behaviours.Player
     public class PlayerAnimationBehaviour : MonoBehaviour
     {
 
-        //TODO:
-        //shoot when ducking animation has finished
-        //shoot faster when ducking
-        // play reverse animation when hiding gun
-        //If standing and shoot, play complete animation
-        //back to unarmed idle after 5f (optional)
-
         public Animator PlayerAnimator;
-        public SpriteRenderer PlayerSprite;
         public PlayerWeaponBehaviour PlayerWeapon;
 
         private Vector2 _playerMovement;
@@ -30,9 +22,6 @@ namespace Demo.Behaviours.Player
         private bool _isDucking = false;
         private bool _isShooting = false;
         public bool IsGrounded;
-
-        private float _currentTime;
-        private int _timeToAction = 5;
 
         // Start is called before the first frame update
         void Start()
@@ -48,12 +37,6 @@ namespace Demo.Behaviours.Player
         private void Update()
         {
             UpdateMovementAnimation(_playerMovement.x);
-            
-            // _currentTime += Time.deltaTime;
-            // if(_currentTime >= _timeToAction)
-            // {
-            //     PlayStandAnimation();
-            // }
         }
 
         public void UpdateMovementValue(Vector2 movementVector)
@@ -98,18 +81,12 @@ namespace Demo.Behaviours.Player
         public void PlayShootAnimation(bool weaponState)
         {
             PlayerAnimator.SetBool(_playerShootID, weaponState);
-            if(!_isDucking) ResetTime();
         }
 
         public void UpdateWeaponState(bool weaponState)
         {
             _isShooting = weaponState;
             PlayerAnimator.SetBool(_playerShootID,_isShooting);
-        }
-
-        private void ResetTime()
-        {
-            _currentTime = 0f;
         }
         
         // Invoked from shoot_animation Animation Event

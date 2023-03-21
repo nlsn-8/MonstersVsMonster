@@ -8,9 +8,9 @@ namespace Demo.Managers
     public class GameManager : MonoBehaviour
     {
         public UIManager UI;
-        public Action GameHasStarted;
-        public Action GameHasFinished;
-        public Action<bool> SwitchPlayerInputMap;
+        public event Action GameHasStarted;
+        public event Action GameHasFinished;
+        public event Action<bool> SwitchPlayerInputMap;
 
         private bool _isPaused;
         public bool IsPaused

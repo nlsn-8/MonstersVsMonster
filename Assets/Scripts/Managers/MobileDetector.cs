@@ -12,7 +12,7 @@ namespace Demo.Managers
         [Header("[Player Mobile UI]")]
         public GameObject[] ScreenButtons;
 
-        public static Action MobileDevice;
+        public static event Action MobileDevice;
 
         void OnEnable()
         {
