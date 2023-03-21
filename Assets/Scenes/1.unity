@@ -26750,14 +26750,6 @@ MonoBehaviour:
     isLoop: 0
     playOnAwake: 0
     hasCooldown: 1
-  - name: Monster
-    source: {fileID: 0}
-    clip: {fileID: 8300000, guid: dd0fe16c7a150b24fbee0ea45a54cff9, type: 3}
-    volume: 0.5
-    pitch: 1
-    isLoop: 0
-    playOnAwake: 0
-    hasCooldown: 1
   - name: Bite
     source: {fileID: 0}
     clip: {fileID: 8300000, guid: 378a126117a591c4fa102729feb201a2, type: 3}
@@ -26782,6 +26774,22 @@ MonoBehaviour:
     isLoop: 0
     playOnAwake: 0
     hasCooldown: 0
+  - name: MonsterBat
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: dd0fe16c7a150b24fbee0ea45a54cff9, type: 3}
+    volume: 0.5
+    pitch: 1
+    isLoop: 0
+    playOnAwake: 0
+    hasCooldown: 1
+  - name: MonsterFlyeye
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: e8e892de1ec1308458ea16d4d7bf45b5, type: 3}
+    volume: 0.5
+    pitch: 1
+    isLoop: 0
+    playOnAwake: 0
+    hasCooldown: 1
 --- !u!1 &642951312
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,42 +2,52 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = System.Random;
+
 using Demo.Behaviours;
 using Demo.Managers;
 
 namespace Demo.Behaviours.Enemy
 {
-    public class EnemyBehaviour : MonoBehaviour, IDamageable
+    public class EnemyBaseBehaviour : MonoBehaviour, IDamageable
     {
-        public GameObject EnemyDeathAnimation;
-        private IDamageable _damageable;
-        private Random _random;
-        public float Health{get;set;}
         public float Resistance{get;set;}
-        private int _strength;
-        private AudioSource _audioSource;
-        private int _minWaitBetweenPlays = 4;
-        private int _maxWaitBetweenPlays = 10;
-        private float _waitTimeCountdown;
-        private string MonsterSound = "Monster";
+        public float Health{get;set;}
+
+        protected int _strength;
+
+        public GameObject EnemyDeathAnimation;
+        protected IDamageable _damageable;
+        protected Random _random;
+
+        protected AudioSource _audioSource;
+        protected int _minWaitBetweenPlays = 4;
+        protected int _maxWaitBetweenPlays = 10;
+        protected float _waitTimeCountdown;
+        public string MonsterSound;
         
-        private void Start()
+        protected void Start()
+        {
+            Init();
+            _random = new Random();
+            _waitTimeCountdown = _random.Next(3,5);
+            _audioSource = SoundManager.Instance.GetSource(MonsterSound);
+        }
+
+        protected virtual void Init()
         {
             Health = 100;
             Resistance = 0.8f;
             _strength = 20;
-            _random = new Random();
-            _audioSource = SoundManager.Instance.GetSource(MonsterSound);
-            _waitTimeCountdown = _random.Next(3,5);
         }
 
-        private void Update()
+        protected virtual void Update()
         {
             PlayMonsterSoundRandomly();
         }
 
-        void PlayMonsterSoundRandomly()
+        protected void PlayMonsterSoundRandomly()
         {
+            if(_audioSource == null) return;
             if (!_audioSource.isPlaying)
             {
                 if (_waitTimeCountdown < 0f)
@@ -52,7 +62,7 @@ namespace Demo.Behaviours.Enemy
             }
         }
 
-        public void Damage(int damage)
+        public virtual void Damage(int damage)
         {
             var dmg = damage * Resistance;
             Health -= dmg;
@@ -67,7 +77,7 @@ namespace Demo.Behaviours.Enemy
             // play damage animation
         }
 
-        private void Die()
+        protected virtual void Die()
         {
             // play death sound
             SoundManager.Instance.Play("EnemyDeath");
@@ -78,13 +88,15 @@ namespace Demo.Behaviours.Enemy
             Destroy(this.gameObject);
         }
 
-        private void OnTriggerEnter2D(Collider2D other)
+        protected virtual void OnTriggerEnter2D(Collider2D other)
         {
             _damageable = other.GetComponent<IDamageable>();
             if(_damageable != null)
             {
                 SoundManager.Instance.Play("Bite");
                 // Enemy makes damage to the other damageable
+                // Enemy cannot make damage to other enemies since 
+                // they ignore Enemy layer in the enemy collision matrix
                 _damageable.Damage(_strength);
                 // Enemy takes damage if it collides with a damageable obj
                 // Damage(_strength);
