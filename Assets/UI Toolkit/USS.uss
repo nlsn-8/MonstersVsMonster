@@ -29,10 +29,10 @@ VisualElement {
     flex-direction: column;
     background-color: rgb(21, 19, 60);
     flex-basis: auto;
-    border-left-color: rgb(241, 238, 233);
-    border-right-color: rgb(241, 238, 233);
-    border-top-color: rgb(241, 238, 233);
-    border-bottom-color: rgb(241, 238, 233);
+    border-left-color: rgba(241, 238, 233, 255);
+    border-right-color: rgba(241, 238, 233, 255);
+    border-top-color: rgba(241, 238, 233, 255);
+    border-bottom-color: rgba(241, 238, 233, 255);
     border-left-width: 9px;
     border-right-width: 9px;
     border-top-width: 9px;
