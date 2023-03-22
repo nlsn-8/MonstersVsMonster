@@ -1,0 +1,508 @@
+VisualElement {
+}
+
+.mainContainer {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.mainText {
+    color: rgb(214, 28, 78);
+    -unity-text-align: middle-center;
+    -unity-font: url('project://database/Assets/UI/Font/Hardpixel.OTF?fileID=12800000&guid=42249d276c95e494aac3296b5af04584&type=3#Hardpixel');
+    -unity-font-definition: none;
+    white-space: normal;
+    font-size: 250%;
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.textContainer {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(21, 19, 60);
+    flex-basis: auto;
+    border-left-color: rgb(241, 238, 233);
+    border-right-color: rgb(241, 238, 233);
+    border-top-color: rgb(241, 238, 233);
+    border-bottom-color: rgb(241, 238, 233);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    scale: 1 1;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out-bounce;
+    -unity-font: url('project://database/Assets/UI/Font/Hardpixel.OTF?fileID=12800000&guid=42249d276c95e494aac3296b5af04584&type=3#Hardpixel');
+    -unity-font-definition: none;
+    width: 35%;
+    height: 70%;
+    min-height: 250px;
+    min-width: 250px;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    -unity-text-align: middle-center;
+}
+
+.button {
+    font-size: 30px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out-circ;
+    transition-property: all;
+    color: rgb(27, 26, 23);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-left-color: rgb(27, 26, 23);
+    border-right-color: rgb(27, 26, 23);
+    border-top-color: rgb(27, 26, 23);
+    border-bottom-color: rgb(27, 26, 23);
+    background-color: rgb(241, 238, 233);
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    -unity-text-align: middle-center;
+    min-width: 100px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.buttonContainer {
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    min-width: 100px;
+    max-width: 200px;
+    max-height: 25%;
+}
+
+.redTransparency {
+    background-color: rgba(197, 47, 36, 0.33);
+}
+
+.gameOverContainer {
+    -unity-font-definition: none;
+    -unity-font: url('project://database/Assets/UI/Font/Hardpixel.OTF?fileID=12800000&guid=42249d276c95e494aac3296b5af04584&type=3#Hardpixel');
+    justify-content: center;
+    align-items: center;
+}
+
+.controlBinding {
+    justify-content: center;
+    align-items: center;
+    color: rgba(241, 238, 233, 255);
+}
+
+.controlsContainer {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+    height: 40px;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.popup:disabled {
+    transition-duration: 0.5s;
+    scale: 0 0;
+    transition-timing-function: ease-in-bounce;
+}
+
+.popup {
+}
+
+.controlText {
+    font-size: 100%;
+    align-items: stretch;
+    justify-content: space-around;
+    -unity-text-align: middle-center;
+    height: 100%;
+    flex-shrink: 0;
+    flex-grow: 0;
+    color: rgb(250, 194, 19);
+}
+
+.rebindButtonContainer {
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.rebindMiddleButtonContainer {
+    min-width: 90px;
+    max-width: 40%;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.rebindTextContainer {
+    font-size: 170%;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    width: 80px;
+    justify-content: center;
+    align-items: center;
+}
+
+.rebindButton {
+    width: 100%;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 100%;
+    font-size: 130%;
+    -unity-text-align: middle-center;
+    background-color: rgb(115, 119, 123);
+    color: rgb(241, 238, 233);
+}
+
+.rebindButton:hover {
+    background-color: rgb(214, 28, 78);
+    scale: 1.05 1.05;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+    color: rgb(241, 238, 233);
+}
+
+.controlsBinderContainer {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 50%;
+    flex-shrink: 0;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    width: 100%;
+}
+
+.closeButton {
+    border-left-color: rgb(214, 28, 78);
+    border-right-color: rgb(214, 28, 78);
+    border-top-color: rgb(214, 28, 78);
+    border-bottom-color: rgb(214, 28, 78);
+}
+
+.mainMenuContainer {
+    justify-content: center;
+    align-items: center;
+    left: -14%;
+    top: -3%;
+    -unity-font: url('project://database/Assets/UI/Font/Hardpixel.OTF?fileID=12800000&guid=42249d276c95e494aac3296b5af04584&type=3#Hardpixel');
+    -unity-font-definition: none;
+    -unity-text-align: middle-center;
+}
+
+.mainMenuMainTitleContainer {
+}
+
+.mainMenuTitleText {
+    color: rgb(214, 28, 78);
+    text-shadow: -3px -3px 0 rgb(250, 194, 19);
+    font-size: 45%;
+    -unity-paragraph-spacing: -15px;
+}
+
+.mainMenuButtonContainer {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    justify-content: center;
+}
+
+.mainMenuButton {
+    -unity-font: url('project://database/Assets/UI/Font/Hardpixel.OTF?fileID=12800000&guid=42249d276c95e494aac3296b5af04584&type=3#Hardpixel');
+    -unity-font-definition: none;
+    font-size: 20px;
+    color: rgb(241, 238, 233);
+    background-color: rgba(0, 0, 0, 0);
+    border-left-color: rgb(241, 238, 233);
+    border-right-color: rgb(241, 238, 233);
+    border-top-color: rgb(241, 238, 233);
+    border-bottom-color: rgb(241, 238, 233);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+}
+
+.mainMenuButton2 {
+    -unity-font: url('project://database/Assets/UI/Font/Hardpixel.OTF?fileID=12800000&guid=42249d276c95e494aac3296b5af04584&type=3#Hardpixel');
+    -unity-font-definition: none;
+    font-size: 20px;
+    color: rgb(241, 238, 233);
+    background-color: rgb(160, 233, 83);
+    border-left-color: rgb(241, 238, 233);
+    border-right-color: rgb(241, 238, 233);
+    border-top-color: rgb(241, 238, 233);
+    border-bottom-color: rgb(241, 238, 233);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+}
+
+.mainMenuButton:hover {
+    -unity-font: url('project://database/Assets/UI/Font/Hardpixel.OTF?fileID=12800000&guid=42249d276c95e494aac3296b5af04584&type=3#Hardpixel');
+    -unity-font-definition: none;
+    font-size: 20px;
+    color: rgb(250, 194, 19);
+    background-color: rgba(0, 0, 0, 0);
+    border-left-color: rgb(250, 194, 19);
+    border-right-color: rgb(250, 194, 19);
+    border-top-color: rgb(250, 194, 19);
+    border-bottom-color: rgb(250, 194, 19);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+}
+
+.button:hover {
+    background-color: rgb(250, 194, 19);
+    border-left-color: rgb(214, 28, 78);
+    border-right-color: rgb(214, 28, 78);
+    border-top-color: rgb(214, 28, 78);
+    border-bottom-color: rgb(214, 28, 78);
+    scale: 1.1 0.9;
+    transition-timing-function: ease-out;
+    transition-duration: 0.3s;
+}
+
+.gameOverButton {
+    width: 100%;
+    height: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 25px;
+    background-color: rgba(241, 238, 233, 255);
+    color: rgb(21, 19, 60);
+    border-left-color: rgb(21, 19, 60);
+    border-right-color: rgb(21, 19, 60);
+    border-top-color: rgb(21, 19, 60);
+    border-bottom-color: rgb(21, 19, 60);
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.gameOverButton2 {
+    width: 100%;
+    height: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 25px;
+    background-color: rgb(250, 194, 19);
+    color: rgb(21, 19, 60);
+    border-left-color: rgb(21, 19, 60);
+    border-right-color: rgb(21, 19, 60);
+    border-top-color: rgb(21, 19, 60);
+    border-bottom-color: rgb(21, 19, 60);
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.gameOverButton:hover {
+    width: 100%;
+    height: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 25px;
+    background-color: rgb(241, 238, 233);
+    color: rgb(21, 19, 60);
+    border-left-color: rgb(214, 28, 78);
+    border-right-color: rgb(214, 28, 78);
+    border-top-color: rgb(214, 28, 78);
+    border-bottom-color: rgb(214, 28, 78);
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    scale: 1.1 1.1;
+    transition-timing-function: ease-out;
+    transition-duration: 0.3s;
+}
+
+.gameOverText {
+    color: rgb(247, 126, 33);
+    font-size: 80px;
+}
+
+.gameOverText2 {
+    color: rgb(250, 194, 19);
+    font-size: 80px;
+    scale: 1.1 1.1;
+}
+
+.popupControlsContainer {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+    height: 40px;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.mobileButton {
+    font-size: 15px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out-circ;
+    transition-property: all;
+    color: rgb(27, 26, 23);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-left-color: rgba(241, 238, 233, 255);
+    border-right-color: rgba(241, 238, 233, 255);
+    border-top-color: rgba(241, 238, 233, 255);
+    border-bottom-color: rgba(241, 238, 233, 255);
+    background-color: rgb(250, 194, 19);
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    -unity-text-align: middle-center;
+    min-width: 50px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    min-height: 50px;
+}
+
+.mobilePauseButton {
+    font-size: 15px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out-circ;
+    transition-property: all;
+    color: rgba(241, 238, 233, 255);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-left-color: rgb(241, 238, 233);
+    border-right-color: rgb(241, 238, 233);
+    border-top-color: rgb(241, 238, 233);
+    border-bottom-color: rgb(241, 238, 233);
+    background-color: rgba(250, 194, 19, 0);
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    -unity-text-align: middle-center;
+    min-width: 30px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    min-height: 30px;
+    letter-spacing: 5px;
+    max-height: 50px;
+    max-width: 50px;
+}
+
+.achorToRight {
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

@@ -13,8 +13,10 @@ namespace Demo.Behaviours.Player
         void Start()
         {
             _followCam = GameObject.Find("VirtualCamera").GetComponent<CinemachineVirtualCamera>();
-            if(_followCam == null ) return;
-            _followCam.Follow = this.gameObject.transform;
+            if(_followCam != null )
+            {
+                _followCam.Follow = this.gameObject.transform;
+            }
         }
     }
 }

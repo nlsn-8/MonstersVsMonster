@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2494306600185885534}
   - component: {fileID: 5045945303626209570}
   m_Layer: 0
-  m_Name: EnemyDeathAnimation
+  m_Name: DeathAnimation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

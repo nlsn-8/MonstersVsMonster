@@ -1,0 +1,16 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/USS.uss?fileID=7433441132597879392&amp;guid=103787b3b10278443b2e3623fb195600&amp;type=3#USS" />
+    <ui:VisualElement name="MainContainer" class="mainContainer" style="flex-direction: column; align-items: center; justify-content: center; display: flex;">
+        <ui:VisualElement class="mainMenuContainer">
+            <ui:VisualElement name="MainButtonContainer" class="mainMenuMainTitleContainer" style="scale: 1 1; align-items: center; justify-content: center; -unity-text-align: middle-center; font-size: 100px; flex-shrink: 1;">
+                <ui:Label text="MONSTERS&#10;VS&#10;MONSTER" display-tooltip-when-elided="true" class="mainMenuTitleText" />
+            </ui:VisualElement>
+            <ui:VisualElement class="mainMenuButtonContainer" style="display: flex;">
+                <ui:Button text="Play" display-tooltip-when-elided="true" name="PlayButton" class="mainMenuButton" style="overflow: visible;" />
+            </ui:VisualElement>
+            <ui:VisualElement class="mainMenuButtonContainer" style="display: none;">
+                <ui:Button text="Settings" display-tooltip-when-elided="true" name="SettingsButton" class="mainMenuButton unity-button" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

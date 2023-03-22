@@ -7,6 +7,7 @@ namespace Demo.Managers
 {
     public class SoundManager : MonoBehaviour
     {
+        public GameManager GameManager;
         public Sound[] Sounds;
         private static Dictionary<string, float> _soundTimerDictionary;
         private bool _hasGameFinished = false;
@@ -34,6 +35,12 @@ namespace Demo.Managers
 
         private void Awake()
         {
+            Singleton();
+            Init();
+        }
+
+        private void Singleton()
+        {
             if (_instance != null && _instance != this)
             {
                 Destroy(this.gameObject);
@@ -44,7 +51,10 @@ namespace Demo.Managers
                 _instance = this;
             }
             DontDestroyOnLoad(gameObject);
+        }
 
+        private void Init()
+        {
             _soundTimerDictionary = new Dictionary<string, float>();
 
             foreach (Sound sound in Sounds)

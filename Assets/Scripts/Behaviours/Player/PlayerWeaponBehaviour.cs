@@ -15,6 +15,13 @@ namespace Demo.Behaviours.Player
 
         private Vector2 _playerMovement;
         private float _fireRate = 0.5f;
+        public float FireRate
+        {
+            set
+            {
+                _fireRate = value;
+            }
+        }
         private float _nextFire = 0.0f;
         private bool _canShoot = false;
         public bool AnimationEnded = false;

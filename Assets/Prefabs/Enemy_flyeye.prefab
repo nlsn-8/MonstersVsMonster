@@ -98,8 +98,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d40ae0ba67538940bcadb231c690348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyRigidbody: {fileID: 4457211670270554634}
-  EnemySeeker: {fileID: 4457211670270554635}
 --- !u!58 &4457211670270554628
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -125,10 +123,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4457211670270554630}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de5d81009b2391047ac6f41263ae448b, type: 3}
+  m_Script: {fileID: 11500000, guid: 0059941994091ca418aa9fc82e54d672, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyDeathAnimation: {fileID: 4586559040831576174, guid: 180969439b067e7439978dfab43a5417, type: 3}
+  MonsterSound: 
 --- !u!1 &4457211671448701560
 GameObject:
   m_ObjectHideFlags: 0
